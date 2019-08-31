@@ -1,0 +1,150 @@
+<html>
+<head>
+<style>
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+body
+{
+background-image:url("9999.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<script>
+function validation()
+{
+    var email = document.forms["register"]["email"];
+    var password = document.forms["register"]["password"];
+
+
+    if (email.value == "")
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if (email.value.indexOf("@", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    if (email.value.indexOf(".", 0) < 0)
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+
+    
+    if(password.value == "")
+    {
+      window.alert("please enter the password");
+      password.focus();
+      return false;
+    }
+    if(password.length<=10)
+    {
+      window.alert("please enter a password of atleast 10 characters")
+      password.focus();
+      return false;
+    }
+    re=/[0-9]/;
+    if(!re.test(password.value))
+    {
+      window.alert("please enter atleast one number");
+      password.focus();
+      return false;
+    }
+    re=/[a-z]/;
+    if(!re.test(password.value))
+    {
+      window.alert("please enter atleast one lowercase letter");
+      password.focus();
+      return false;
+    }
+    re=/[A-Z]/;
+    if(!re.test(password.value))
+    {
+      window.alert("please enter atleast one uppercase letter");
+      password.focus();
+      return false;
+    }
+
+    return true;
+  }
+	</script>
+</head>
+<link rel="stylesheet" type="text/css" href="login.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body>
+<center>
+	<h1>Recharge </h1>
+
+	<h2>EVERY RUPEE WILL CONNECT YOUR PARTNER</h2>
+
+	<h3></h3>
+	</center>
+	<br>
+	</div>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active"  href="login.html">Login</a>
+  <a href="signup.html">Signup</a>
+  <a href="#contact">Contact</a>
+  <a href="aboutus.html">About</a>
+  
+</div>
+  <br>
+  <br>
+ <center> <form name="register" onsubmit="return validation()" action="login.php" method="post">
+<section class="login-block">
+    <div class="container">
+	<div class="row ">
+		<div class="col login-sec">
+		    <h2 class="text-center">Login Now</h2>
+		    <form class="login-form">
+  <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">Email ID</label>
+    <input type="text" class="form-control" placeholder="EMAIL-ID" name="email">
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+    <input type="password" class="form-control" placeholder="PASSWORD" name="password">
+  </div>
+  <button type="submit" class="btn btn-login float-right">Submit</button>
+  </div>
+</div>
+	</div>
+	</div>
+
+  </form><center>
+</section>
+</body>
+</head>
+</html>
